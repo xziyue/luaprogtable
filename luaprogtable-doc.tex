@@ -16,8 +16,9 @@
 
 \newcommand{\thispkg}{\pkg{luaprogtable}}
 
-\title{The \thispkg\  package: programmatic table interface for \LuaLaTeX}
-\author{Ziyue ``Alan'' Xiang\\ {\scriptsize\ttfamily me@alanshawn.com}}
+\title{The \href{https://github.com/xziyue/luaprogtable}{\thispkg}\ package: programmatic table interface for \LuaLaTeX}
+\author{\href{https://www.alanshawn.com}{Ziyue ``Alan'' Xiang}\\
+{\scriptsize\ttfamily ziyue.alan.xiang@gmail.com}}
 \date{\today}
 
 \NewDocumentEnvironment{optiondetail}{m}{%
@@ -66,7 +67,7 @@
 
 The \LaTeX3 project provides \LaTeX\ users with a handful of macros to interpret and  manipulate various types of objects (e.g. integers, floating point numbers, token lists, sequences, \ldots) However, there is few existing function that allows users to interact with tables in a programmatic fashion. For example, if a user needs to modify the content of the cell on 20\textsuperscript{th} row and 8\textsuperscript{th} column, he/she needs to navigate the correct cell location among a pile of |&|'s and |\\|'s, which is very inefficient and error-prone. It is very difficult for someone to modify a cell based on the content within it using \LaTeX\ macros.
 
-\thispkg\ aims to tackle these problems by providing a series of \emph{programmatic} interface for tables. The \cs{LPTGetCellData} and \cs{LPTSetCell} commands allows one to access and alter the content of a single cell. The \env{lptview} environment allows one to modify a small sub-view of a larger table.
+\thispkg\ aims to tackle these problems by providing a series of \emph{programmatic} interface for tables. The \cs{LPTGetCellData} and \cs{LPTSetCell} commands allow one to access and alter the content of a single cell. The \env{lptview} environment allows one to modify a small sub-view of a larger table.
 
 \section{Basic Usage}
 
