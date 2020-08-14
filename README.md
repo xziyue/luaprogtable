@@ -6,7 +6,10 @@ The LaTeX3 project provides LaTeX users with a handful of macros to interpret an
 
 **For more information, please refer to the [documentation](./luaprogtable-doc.pdf)**.
 
+## Author
 
+- Ziyue "Alan" Xiang
+- ziyue.alan.xiang@gmail.com
 
 ## License
 
