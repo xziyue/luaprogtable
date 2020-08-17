@@ -494,6 +494,43 @@ Returns the coordinates of the parent of the cell specified by \meta{index expr}
 \LPTUseTable
 \end{tablesample}
 
+\subsection{Parsing each cell as token list}
+
+Each cell of the following table contains a token list, where the first group is an Arabic numeral and the second group is its corresponding English representation. The following example uses \LaTeX3 to interpret each cell as a token list and outputs a table with alternating number representations.
+\begin{tablesample}
+\LPTNewTable{iWKxzM7SOGSe}{3}{|c|c|c|}[
+nrows=3, 
+default after line=\hline]
+\LPTSetCurrentTable{iWKxzM7SOGSe}
+\LPTSetRowProp{1}{before line=\hline}
+\begin{lptview}{:,:}
+{{1}{One}} {{2}{Two}} {{3}{Three}} \\
+{{4}{Four}} {{5}{Five}} {{6}{Six}} \\
+{{7}{Seven}} {{8}{Eight}} {{9}{Nine}}
+\end{lptview}
+Before:\par
+\LPTUseTable\par
+\ExplSyntaxOn
+\bool_set_true:N \l_tmpa_tool 
+\int_step_inline:nn {3} {
+    \int_step_inline:nn {3} {
+        \tl_set:Nx \l_tmpa_tl {\LPTGetCellData{#1,##1}}
+        \bool_if:NTF \l_tmpa_tool {
+            \tl_set:Nx \l_tmpb_tl {\tl_item:Nn \l_tmpa_tl {1}}
+            \bool_set_false:N \l_tmpa_tool 
+        } {
+            \tl_set:Nx \l_tmpb_tl {\tl_item:Nn \l_tmpa_tl {2}}
+            \bool_set_true:N \l_tmpa_tool 
+        }
+        \exp_args:Nno \LPTSetCell {#1,##1} {\l_tmpb_tl}
+    }
+}
+\ExplSyntaxOff
+After:\par
+\LPTUseTable
+\end{tablesample}
+
+
 \subsection{Listing the name and shape of all tables}
 
 

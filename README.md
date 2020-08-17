@@ -4,11 +4,11 @@ The LaTeX3 project provides LaTeX users with a handful of macros to interpret an
 
 `luaprogtable` aims to tackle these problems by providing a series of *programmatic* interface for tables. The `\LPTGetCellData` and `\LPTSetCell` commands allow one to access and alter the content of a single cell. The `lptview` environment allows one to modify a small sub-view of a larger table.
 
-**For more information, please refer to the [documentation](./luaprogtable-doc.pdf)**.
+**For more information, please refer to the [documentation](https://github.com/xziyue/luaprogtable/blob/master/luaprogtable-doc.pdf)**.
 
 ## Author
 
-- Ziyue "Alan" Xiang
+- [Ziyue "Alan" Xiang](https://www.alanshawn.com)
 - ziyue.alan.xiang@gmail.com
 
 ## License
